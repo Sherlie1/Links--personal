@@ -6,7 +6,7 @@
 
 body {
    font-family: "Libre Baskerville", serif;
-   background-image: url('./../imagen/maravilla.jpg');
+   background-image: url('./../img/maravilla.jpg');
   /* background-image: url('./../img/costa.jpg');*/
    background-size: cover;
    background-position: top;
