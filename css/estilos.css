@@ -6,22 +6,27 @@
 
 body {
    font-family: "Libre Baskerville", serif;
-  background-image: url('../img/maravilla.jpg');
+   background-image: url('../img/maravilla.jpg');
    background-size: cover;
-   background-position: top;
+   background-position: center;
    background-repeat: no-repeat;
+   background-attachment: fixed; /* Mantiene la imagen fija al hacer scroll */
    min-height: 100vh;
+   margin: 0;
+   position: relative;
 
+   /* Capa transparente */
    &::after {
       content: '';
-      width: 100%;
-      height: 100%;
-      background: rgba(255, 255, 255, 0.5);
-      position: absolute;
+      position: fixed; /* 'fixed' asegura que cubra toda la pantalla visible */
       top: 0;
       left: 0;
+      width: 100vw;
+      height: 100vh;
+      background: rgba(255, 255, 255, 0.3); /* Cambia el 0.3 (30%) para más o menos transparencia */
       backdrop-filter: blur(0px);
       z-index: 0;
+      pointer-events: none; /* Permite hacer clic en los botones sin interferencia */
    }
 }
 
@@ -30,7 +35,7 @@ body {
    z-index: 1;
    width: 90%;
    max-width: 700px;
-   margin: auto;
+   margin: 0 auto; /* Centra el contenedor horizontalmente */
    padding: 30px 0;
 
    .bio {
@@ -38,68 +43,70 @@ body {
       margin-bottom: 40px;
 
       .foto {
-    width: 200px;
-    height: auto;
-    aspect-ratio: 1/1;
-    object-fit: cover;
-    border-radius: 100px;
-    margin-bottom: 20px;
-}
+         width: 200px;
+         height: auto;
+         aspect-ratio: 1/1;
+         object-fit: cover;
+         border-radius: 50%; /* 50% garantiza un círculo perfecto */
+         margin-bottom: 20px;
+      }
 
-.nombre {
-   margin-bottom: 5px;
-   font-size: 40px;
-}
+      .nombre {
+         margin-bottom: 5px;
+         font-size: 40px;
+      }
 
-.descripcion {
-   font-size: 18px;
-}
+      .descripcion {
+         font-size: 18px;
+      }
    }
 
    .links {
       .link {
          color: black;
-      border: 3px solid black;
-      border-radius: 10px;
-      text-align: center;
-      display: block;
-      margin-bottom: 20px;
-      text-decoration: none;
-      text-transform: uppercase;
-      padding: 20px;
-      font-weight: 700px;
-      transition: 0.2s ease all;
-      box-shadow: 1px 1px 0px 0px black, 2px 2px 0px 0px black, 3px 3px 0px 0px black, 4px 4px 0px 0px black, 5px 5px 0px 0px black;
-      transform: translate(-5px, -5px);
+         border: 3px solid black;
+         border-radius: 10px;
+         text-align: center;
+         display: block;
+         margin-bottom: 20px;
+         text-decoration: none;
+         text-transform: uppercase;
+         padding: 20px;
+         font-weight: 700;
+         transition: 0.2s ease all;
+         box-shadow: 1px 1px 0px 0px black, 2px 2px 0px 0px black, 3px 3px 0px 0px black, 4px 4px 0px 0px black, 5px 5px 0px 0px black;
+         transform: translate(-5px, -5px);
 
-      &:hover {
-         color: #fff;
-         box-shadow: 0px 0px 0px 0px;
-         transform: translate(0px, 0px);
-      }
-      &.sitio-web:hover {
-         background: orange;
-         color: #000;
-      }
-       &.youtube:hover {
-         background: #ff0000;
-         color: #000;
-      }
+         &:hover {
+            color: #fff;
+            box-shadow: 0px 0px 0px 0px;
+            transform: translate(0px, 0px);
+         }
 
-       &.x:hover {
-         background: #14171a;
-         color: #171313;
-      }
+         &.github:hover {
+            background: orange;
+            color: #000;
+         }
 
-       &.facebook:hover {
-         background: #1877f2;
-         color: #000;
-      }
+         &.youtube:hover {
+            background: #ff0000;
+            color: #000;
+         }
 
-       &.instagram:hover {
-         background: #c1f4c1;
-         color: #000;
+         &.x:hover {
+            background: #14171a;
+            color: #fff;
+         }
+
+         &.facebook:hover {
+            background: #1877f2;
+            color: #000;
+         }
+
+         &.instagram:hover {
+            background: #c1f4c1;
+            color: #000;
+         }
       }
    }
-}
 }
