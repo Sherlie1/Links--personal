@@ -6,23 +6,26 @@
 
 body {
    font-family: "Libre Baskerville", serif;
-   background-image: url('./../img/malavilla.jpg');
+   background-image: url('./../imagen/maravilla.jpg');
   /* background-image: url('./../img/costa.jpg');*/
    background-size: cover;
    background-position: top;
    background-repeat: no-repeat;
    min-height: 100vh;
+   background-attachment: fixed; /*Para que se quede fijo*/
+   position: relative;
 
    &::after {
       content: '';
       width: 100%;
       height: 100%;
       background: rgba(255, 255, 255, 0.5);
-      position: absolute;
+      position: fixed;
       top: 0;
       left: 0;
       backdrop-filter: blur(0px);
       z-index: 0;
+      pointer-events: none;
    }
 }
 
